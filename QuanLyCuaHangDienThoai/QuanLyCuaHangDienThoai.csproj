@@ -95,6 +95,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Dangnhap.aspx" />
     <Content Include="styledangnhap.css" />
+    <Content Include="Themdienthoai.aspx" />
     <Content Include="Trangchu.aspx" />
     <Content Include="style.css" />
     <Content Include="style\app.js" />
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Dangnhap.aspx.designer.cs">
       <DependentUpon>Dangnhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Themdienthoai.aspx.cs">
+      <DependentUpon>Themdienthoai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Themdienthoai.aspx.designer.cs">
+      <DependentUpon>Themdienthoai.aspx</DependentUpon>
     </Compile>
     <Compile Include="Trangchu.aspx.cs">
       <DependentUpon>Trangchu.aspx</DependentUpon>
