@@ -34,37 +34,63 @@
             background-color: #f2f2f2;
             padding: 20px;
         }
-        .sel-5{
-            width: 13%;
+
+        .sel-5 {
+            width: 19.2%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            margin-right:10px;
+            margin-right: 10px;
         }
-        .sel-2{
-            width: 45%;
+
+        .sel-4 {
+            width: 24.2%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            margin-right:10px;
+            margin-right: 10px;
         }
-        .sel-3{
-            width: 28%;
+
+        .sel-2 {
+            width: 49.2%;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            margin-right:10px;
+            margin-right: 10px;
         }
-         .fup-5{
+
+        .sel-3 {
+            width: 32.5%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-right: 10px;
+        }
+
+        .sel-1 {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-right: 10px;
+        }
+
+        .fup-5 {
             width: 15%;
             padding: 12px 20px;
             margin: 8px 0;
@@ -72,120 +98,184 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            margin-right:15px;
+            margin-right: 15px;
         }
     </style>
     <div class="form-themdienthoai">
         <form action="/action_page.php">
-            
 
-            <asp:Label ID="Label1" runat="server" Text="Tên điện thoại:"></asp:Label>
-            <asp:TextBox CssClass="input-text" ID="txtTen" runat="server" placeholder="Tên điện thoại..."></asp:TextBox>
-            <asp:Label ID="Label3" runat="server" Text="Màn hình:"></asp:Label>
+            <div class="sel-1">
+                <asp:Label ID="Label1" runat="server" Text="Tên điện thoại:"></asp:Label>
+                <asp:TextBox CssClass="input-text" ID="txtTen" runat="server" placeholder="Tên điện thoại..."></asp:TextBox>
+            </div>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Công nghệ:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddlManHinh1" runat="server" DataSourceID="dsManHinh" DataTextField="CongNghe" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label5" runat="server" Text="Độ phân giải:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5"  ID="ddlManHinh2" runat="server" DataSourceID="dsManHinh" DataTextField="DoPhanGiai" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label6" runat="server" Text="Độ rộng màn:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5"  ID="ddlManHinh3" runat="server" DataSourceID="dsManHinh" DataTextField="DoRongMan" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label7" runat="server" Text="Độ sáng:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5"  ID="ddlManHinh4" runat="server" DataSourceID="dsManHinh" DataTextField="DoSang" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label8" runat="server" Text="Màn cảm ứng:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5"  ID="ddlManHinh5" runat="server" DataSourceID="dsManHinh" DataTextField="ManCamUng" DataValueField="ID"></asp:DropDownList>
-            <br />
+            <div class="sel-1">
+                <asp:Label ID="Label3" runat="server" Text="Màn hình:"></asp:Label>
+                <br />
+                <div class="sel-5">
+                    <asp:Label ID="Label4" runat="server" Text="Công nghệ:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlManHinh1" runat="server" DataSourceID="dsManHinh" DataTextField="CongNghe" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-5">
+                    <asp:Label ID="Label5" runat="server" Text="Độ phân giải:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlManHinh2" runat="server" DataSourceID="dsManHinh" DataTextField="DoPhanGiai" DataValueField="ID"></asp:DropDownList>
+                </div>
 
-            <asp:Label ID="Label9" runat="server" Text="Hãng:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddlHang" runat="server" DataSourceID="dsHang" DataTextField="Ten" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label10" runat="server" Text="Hệ điều hành:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddlHeDieuHanh" runat="server" DataSourceID="dsHeDieuHanh" DataTextField="Ten" DataValueField="ID"></asp:DropDownList>
-            <br />
+                <div class="sel-5">
+                    <asp:Label ID="Label6" runat="server" Text="Độ rộng màn:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlManHinh3" runat="server" DataSourceID="dsManHinh" DataTextField="DoRongMan" DataValueField="ID"></asp:DropDownList>
+                </div>
 
-            <asp:Label ID="Label11" runat="server" Text="Camera Trước"></asp:Label>
-            <br />
-            
-            <asp:Label ID="Label13" runat="server" Text="Độ phân giải:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamFDPG" runat="server" DataSourceID="dsCameraTruoc" DataTextField="DoPhanGiai" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label14" runat="server" Text="Quay phim:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamFQuayPhim" runat="server" DataSourceID="dsCameraTruoc" DataTextField="QuayPhim" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label15" runat="server" Text="Flash:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamFFlash" runat="server" DataSourceID="dsCameraTruoc" DataTextField="Flash" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label16" runat="server" Text="Chụp ảnh:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamFChupAnh" runat="server" DataSourceID="dsCameraTruoc" DataTextField="ChupAnh" DataValueField="ID"></asp:DropDownList>
-            <br />
+                <div class="sel-5">
+                    <asp:Label ID="Label7" runat="server" Text="Độ sáng:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlManHinh4" runat="server" DataSourceID="dsManHinh" DataTextField="DoSang" DataValueField="ID"></asp:DropDownList>
+                </div>
 
-            <asp:Label ID="Label17" runat="server" Text="Camera Sau"></asp:Label>
+                <div class="sel-5">
+                    <asp:Label ID="Label8" runat="server" Text="Màn cảm ứng:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlManHinh5" runat="server" DataSourceID="dsManHinh" DataTextField="ManCamUng" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
-           
-            <asp:Label ID="Label19" runat="server" Text="Độ phân giải:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamBDPG" runat="server" DataSourceID="dsCameraSau" DataTextField="DoPhanGiai" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label20" runat="server" Text="Quay phim:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamBQuayPhim" runat="server" DataSourceID="dsCameraSau" DataTextField="QuayPhim" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label21" runat="server" Text="Flash:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamBFlash" runat="server" DataSourceID="dsCameraSau" DataTextField="Flash" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label22" runat="server" Text="Chụp ảnh:"></asp:Label>
-            <asp:DropDownList CssClass="sel-5" ID="ddCamBChupAnh" runat="server" DataSourceID="dsCameraSau" DataTextField="ChupAnh" DataValueField="ID"></asp:DropDownList>
+            <div class="sel-1">
+                <div class="sel-2">
+                    <asp:Label ID="Label9" runat="server" Text="Hãng:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlHang" runat="server" DataSourceID="dsHang" DataTextField="Ten" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-2">
+                    <asp:Label ID="Label10" runat="server" Text="Hệ điều hành:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddlHeDieuHanh" runat="server" DataSourceID="dsHeDieuHanh" DataTextField="Ten" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
 
-            <asp:Label ID="Label23" runat="server" Text="Ram:"></asp:Label>
-            <asp:DropDownList CssClass="sel-3" ID="ddRam" runat="server" DataSourceID="dsRam" DataTextField="DungLuong" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label24" runat="server" Text="Dung lượng:"></asp:Label>
-            <asp:DropDownList CssClass="sel-3" ID="ddDungLuong" runat="server" DataSourceID="dsDungLuong" DataTextField="DungLuong" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label25" runat="server" Text="Sạc:"></asp:Label>
-            <asp:DropDownList CssClass="sel-3" ID="ddSac" runat="server" DataSourceID="dsSac" DataTextField="LoaiSac" DataValueField="ID"></asp:DropDownList>
+            <div class="sel-1">
+                <asp:Label ID="Label11" runat="server" Text="Camera Trước"></asp:Label>
+                <br />
+                <div class="sel-4">
+                    <asp:Label ID="Label13" runat="server" Text="Độ phân giải:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamFDPG" runat="server" DataSourceID="dsCameraTruoc" DataTextField="DoPhanGiai" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label14" runat="server" Text="Quay phim:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamFQuayPhim" runat="server" DataSourceID="dsCameraTruoc" DataTextField="QuayPhim" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label15" runat="server" Text="Flash:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamFFlash" runat="server" DataSourceID="dsCameraTruoc" DataTextField="Flash" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label16" runat="server" Text="Chụp ảnh:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamFChupAnh" runat="server" DataSourceID="dsCameraTruoc" DataTextField="ChupAnh" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
 
-            <asp:Label ID="Label26" runat="server" Text="Pin:"></asp:Label>
+            <div class="sel-1">
+                <asp:Label ID="Label17" runat="server" Text="Camera Sau"></asp:Label>
+                <br />
+                <div class="sel-4">
+                    <asp:Label ID="Label19" runat="server" Text="Độ phân giải:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamBDPG" runat="server" DataSourceID="dsCameraSau" DataTextField="DoPhanGiai" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label20" runat="server" Text="Quay phim:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamBQuayPhim" runat="server" DataSourceID="dsCameraSau" DataTextField="QuayPhim" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label21" runat="server" Text="Flash:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamBFlash" runat="server" DataSourceID="dsCameraSau" DataTextField="Flash" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label22" runat="server" Text="Chụp ảnh:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddCamBChupAnh" runat="server" DataSourceID="dsCameraSau" DataTextField="ChupAnh" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
-            <asp:Label ID="Label28" runat="server" Text="Dung lượng:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddPinDungLuong" runat="server" DataSourceID="dsPin" DataTextField="DungLuong" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label29" runat="server" Text="Loại Pin:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddPinLoai" runat="server" DataSourceID="dsPin" DataTextField="LoaiPin" DataValueField="ID"></asp:DropDownList>
+            <div class="sel-1">
+                <div class="sel-3">
+                    <asp:Label ID="Label23" runat="server" Text="Ram:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddRam" runat="server" DataSourceID="dsRam" DataTextField="DungLuong" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-3">
+                    <asp:Label ID="Label24" runat="server" Text="Dung lượng:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddDungLuong" runat="server" DataSourceID="dsDungLuong" DataTextField="DungLuong" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-3">
+                    <asp:Label ID="Label25" runat="server" Text="Sạc:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddSac" runat="server" DataSourceID="dsSac" DataTextField="LoaiSac" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
-            <asp:Label ID="Label27" runat="server" Text="Sim:"></asp:Label>
+            <div class="sel-1">
+                <asp:Label ID="Label26" runat="server" Text="Pin:"></asp:Label>
+                <br />
+                <div class="sel-2">
+                    <asp:Label ID="Label28" runat="server" Text="Dung lượng:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddPinDungLuong" runat="server" DataSourceID="dsPin" DataTextField="DungLuong" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-2">
+                    <asp:Label ID="Label29" runat="server" Text="Loại Pin:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddPinLoai" runat="server" DataSourceID="dsPin" DataTextField="LoaiPin" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
-            <asp:Label ID="Label30" runat="server" Text="Loại sim:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddSimLoai" runat="server" DataSourceID="dsSim" DataTextField="LoaiSim" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label31" runat="server" Text="Số khe sim:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddSimSoKhe" runat="server" DataSourceID="dsSim" DataTextField="SoSim" DataValueField="ID"></asp:DropDownList>
+            <div class="sel-1">
+                <asp:Label ID="Label27" runat="server" Text="Sim:"></asp:Label>
+                <br />
+                <div class="sel-2">
+                    <asp:Label ID="Label30" runat="server" Text="Loại sim:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddSimLoai" runat="server" DataSourceID="dsSim" DataTextField="LoaiSim" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-2">
+                    <asp:Label ID="Label31" runat="server" Text="Số khe sim:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddSimSoKhe" runat="server" DataSourceID="dsSim" DataTextField="SoSim" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
             <br />
+            <div class="sel-1">
+                <asp:Label ID="Label32" runat="server" Text="Khuyễn mãi:"></asp:Label>
+                <br />
+                <div class="sel-2">
+                    <asp:Label ID="Label33"  runat="server" Text="Tên khuyến mãi:"></asp:Label>
+                    <asp:DropDownList CssClass="" Width=""  ID="ddTenKM" runat="server" DataSourceID="dsKhuyenMai" DataTextField="TenKhuyenMai" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-2">
+                    <asp:Label ID="Label34" runat="server" Text="Phần trăm:"></asp:Label>
+                    <asp:DropDownList CssClass="" ID="ddPhanTramKM" runat="server" DataSourceID="dsKhuyenMai" DataTextField="PhanTramGiam" DataValueField="ID"></asp:DropDownList>
+                </div>
+            </div>
+            <br />
+            <div class="sel-1">
+                <asp:Label ID="Label35" runat="server" Text="Hình ảnh:"></asp:Label>
+                <br />
+                <div class="sel-5">
+                    <asp:Label ID="Label36" runat="server" Text="Ảnh bìa:"></asp:Label>
+                    <asp:FileUpload CssClass="sel-1" ID="fupAnhBia" runat="server" />
+                </div>
+                <div class="sel-5">
+                    <asp:Label ID="Label37" runat="server" Text="Ảnh 1:"></asp:Label>
+                    <asp:FileUpload CssClass="sel-1" ID="fupAnh1" runat="server" />
+                </div>
+                <div class="sel-5">
+                    <asp:Label ID="Label38" runat="server" Text="Ảnh 2:"></asp:Label>
+                    <asp:FileUpload CssClass="sel-1" ID="fupAnh2" runat="server" />
+                </div>
+                <div class="sel-5">
+                    <asp:Label ID="Label39" runat="server" Text="Ảnh 3:"></asp:Label>
+                    <asp:FileUpload CssClass="sel-1" ID="fupAnh3" runat="server" />
+                </div>
+                <div class="sel-5">
+                    <asp:Label ID="Label40" runat="server" Text="Ảnh 4:"></asp:Label>
+                    <asp:FileUpload CssClass="sel-1" ID="fupAnh4" runat="server" />
+                </div>
+            </div>
+            <br />
+            <div class="sel-1">
+                <asp:Label ID="Label2" runat="server" Text="Thông tin:"></asp:Label>
+                <asp:TextBox CssClass="input-text" ID="txtThongTin" runat="server" placeholder="Thông tin..."></asp:TextBox>
+            </div>
 
-            <asp:Label ID="Label32" runat="server" Text="Khuyễn mãi:"></asp:Label>
-            <br />
-            <asp:Label ID="Label33" runat="server" Text="Tên khuyến mãi:"></asp:Label>
-            <asp:DropDownList CssClass="sel-2" ID="ddTenKM" runat="server" DataSourceID="dsKhuyenMai" DataTextField="TenKhuyenMai" DataValueField="ID"></asp:DropDownList>
-            <asp:Label ID="Label34" runat="server" Text="Phần trăm:"></asp:Label>
-            <asp:DropDownList Width="40%" CssClass="sel-2" ID="ddPhanTramKM" runat="server" DataSourceID="dsKhuyenMai" DataTextField="PhanTramGiam" DataValueField="ID"></asp:DropDownList>
-            <br />
-
-            <asp:Label ID="Label35" runat="server" Text="Hình ảnh:"></asp:Label>
-            <br />
-            <asp:Label ID="Label36" runat="server" Text="Ảnh bìa:"></asp:Label>
-            <asp:FileUpload CssClass="fup-5" ID="fupAnhBia" runat="server" />
-
-            <asp:Label ID="Label37" runat="server" Text="Ảnh 1:"></asp:Label>
-            <asp:FileUpload CssClass="fup-5" ID="fupAnh1" runat="server" />
-            
-            <asp:Label ID="Label38" runat="server" Text="Ảnh 2:"></asp:Label>
-            <asp:FileUpload CssClass="fup-5" ID="fupAnh2" runat="server" />
-            
-            <asp:Label ID="Label39" runat="server" Text="Ảnh 3:"></asp:Label>
-            <asp:FileUpload CssClass="fup-5" ID="fupAnh3" runat="server" />
-            
-             <asp:Label ID="Label40" runat="server" Text="Ảnh 4:"></asp:Label>
-            <asp:FileUpload CssClass="fup-5" ID="fupAnh4" runat="server" />
-            
-            <br />
-
-            <asp:Label ID="Label2" runat="server" Text="Thông tin:"></asp:Label>
-            <asp:TextBox CssClass="input-text" ID="txtThongTin" runat="server" placeholder="Thông tin..."></asp:TextBox>
-
-            <label for="country">Country</label>
-            <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-            </select>
 
 
             <asp:Button type="submit" ID="Button1" runat="server" Text="Thêm" OnClick="Button1_Click" />
