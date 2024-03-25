@@ -160,13 +160,15 @@
                     <asp:Label ID="Label14" runat="server" Text="Quay phim:"></asp:Label>
                     <asp:DropDownList CssClass="" ID="ddCamFQuayPhim" runat="server" DataSourceID="dsCameraTruoc" DataTextField="QuayPhim" DataValueField="ID"></asp:DropDownList>
                 </div>
-                <div class="sel-4">
-                    <asp:Label ID="Label15" runat="server" Text="Flash:"></asp:Label>
-                    <asp:DropDownList CssClass="" ID="ddCamFFlash" runat="server" DataSourceID="dsCameraTruoc" DataTextField="Flash" DataValueField="ID"></asp:DropDownList>
-                </div>
+                
                 <div class="sel-4">
                     <asp:Label ID="Label16" runat="server" Text="Chụp ảnh:"></asp:Label>
                     <asp:DropDownList CssClass="" ID="ddCamFChupAnh" runat="server" DataSourceID="dsCameraTruoc" DataTextField="ChupAnh" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label15" runat="server" Text="Flash:"></asp:Label>
+                
+                    <asp:CheckBox ID="chkCamFFalsh" runat="server" />
                 </div>
             </div>
             <br />
@@ -182,13 +184,15 @@
                     <asp:Label ID="Label20" runat="server" Text="Quay phim:"></asp:Label>
                     <asp:DropDownList CssClass="" ID="ddCamBQuayPhim" runat="server" DataSourceID="dsCameraSau" DataTextField="QuayPhim" DataValueField="ID"></asp:DropDownList>
                 </div>
-                <div class="sel-4">
-                    <asp:Label ID="Label21" runat="server" Text="Flash:"></asp:Label>
-                    <asp:DropDownList CssClass="" ID="ddCamBFlash" runat="server" DataSourceID="dsCameraSau" DataTextField="Flash" DataValueField="ID"></asp:DropDownList>
-                </div>
+                
                 <div class="sel-4">
                     <asp:Label ID="Label22" runat="server" Text="Chụp ảnh:"></asp:Label>
                     <asp:DropDownList CssClass="" ID="ddCamBChupAnh" runat="server" DataSourceID="dsCameraSau" DataTextField="ChupAnh" DataValueField="ID"></asp:DropDownList>
+                </div>
+                <div class="sel-4">
+                    <asp:Label ID="Label21" runat="server" Text="Flash:"></asp:Label>
+             
+                    <asp:CheckBox ID="chkCamBFalsh" runat="server" />
                 </div>
             </div>
             <br />
