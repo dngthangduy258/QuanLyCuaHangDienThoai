@@ -61,7 +61,7 @@ namespace QuanLyCuaHangDienThoai
             string khuyenMai = ddTenKM.SelectedItem.ToString();             //Tên khuyến mãi
             string phanTramKM = ddPhanTramKM.SelectedItem.ToString();       //Phần trăm KM
 
-
+            string thongTin = txtThongTin.Text;                             //Thông tin điện thoại
             //Insert vào màn hình
             string sqlManHinh = "INSERT INTO ManHinh(CongNghe,DoPhanGiai,DoRongMan,DoSang,ManCamUng) VALUES (@CongNghe,@DoPhanGiai,@DoRongMan,@DoSang,@ManCamUng)";
             SqlCommand cmdManHinh = new SqlCommand(sqlManHinh, conn);
@@ -191,14 +191,74 @@ namespace QuanLyCuaHangDienThoai
             cmdKM.ExecuteNonQuery();
             cmdHinhAnh.ExecuteNonQuery();
 
-            //Insert vào điện thoại
+            insertDienThoai(tenDT, thongTin);
+      
+           
+        }
+        protected int SelectThongTin(string tenBang)
+        {
+            string chuoi_ket_noi = ConfigurationManager.ConnectionStrings["connQuanLyCuaHangDienThoai"].ConnectionString;
+            SqlConnection conn = new SqlConnection(chuoi_ket_noi);
+            conn.Open();
 
-            //            int check = cmd.ExecuteNonQuery();
-            //            SELECT TOP 1 id
-            //FROM HinhAnh
-            //ORDER BY ID DESC;
+            int id = 0;
+                string sql = "SELECT TOP 1 id FROM " +tenBang+" ORDER BY ID DESC";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            { 
+                id = Convert.ToInt32(reader["ID"]);
+            }
+                return id;
+        }
+        protected void insertDienThoai(string TenDT, string thongTinDT)
+        {
+            int idHang = SelectThongTin("Hang");
+            int idManHinh = SelectThongTin("ManHinh");
+            int idHDH = SelectThongTin("HeDieuHanh");
+            int idCamF = SelectThongTin("CameraTruoc");
+            int idCamB = SelectThongTin("CameraSau");
+            int idRam = SelectThongTin("Ram");
+            int idDungLuong = SelectThongTin("DungLuong");
+            int idSac = SelectThongTin("Sac");
+            int idPin = SelectThongTin("Pin");
+            int idSim = SelectThongTin("Sim");
+            int idKM = SelectThongTin("KhuyenMai");
+            int idHinhAnh = SelectThongTin("HinhAnh");
 
-            //SqlDataReader reader = cmd.ExecuteReader()
+            System.Diagnostics.Debug.WriteLine(idHang);
+            string chuoi_ket_noi = ConfigurationManager.ConnectionStrings["connQuanLyCuaHangDienThoai"].ConnectionString;
+            SqlConnection conn = new SqlConnection(chuoi_ket_noi);
+            conn.Open();
+            string sql = "INSERT INTO DienThoai (TenDienThoai,IDManHinh,IDHang,IDHeDieuHanh,IDCameraTruoc,IDCameraSau,IDRam,IDDungLuong,IDSim,IDPin,IDSac,IDKhuyenMai,IDHinhAnh,ThongTin) VALUES (@TenDienThoai,@IDManHinh,@IDHang,@IDHeDieuHanh,@IDCameraTruoc,@IDCameraSau,@IDRam,@IDDungLuong,@IDSim,@IDPin,@IDSac,@IDKhuyenMai,@IDHinhAnh,@ThongTin)";
+
+
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@TenDienThoai", TenDT);
+            cmd.Parameters.AddWithValue("@IDManHinh", idManHinh);
+            cmd.Parameters.AddWithValue("@IDHang", idHang);
+            cmd.Parameters.AddWithValue("@IDHeDieuHanh", idHDH);
+            cmd.Parameters.AddWithValue("@IDCameraTruoc", idCamF);
+            cmd.Parameters.AddWithValue("@IDCameraSau", idCamB);
+            cmd.Parameters.AddWithValue("@IDRam", idRam);
+            cmd.Parameters.AddWithValue("@IDDungLuong", idDungLuong);
+            cmd.Parameters.AddWithValue("@IDSim", idSim);
+            cmd.Parameters.AddWithValue("@IDPin", idPin);
+            cmd.Parameters.AddWithValue("@IDSac", idSac);
+            cmd.Parameters.AddWithValue("@IDKhuyenMai", idKM);
+            cmd.Parameters.AddWithValue("@IDHinhAnh", idHinhAnh);
+            cmd.Parameters.AddWithValue("@ThongTin", thongTinDT);
+
+            cmd.ExecuteNonQuery();
+
+
+
+        }
+
+        protected void ddlManHinh5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
