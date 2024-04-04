@@ -7,6 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Form</title>
     <link href="styledangnhap.css" rel="stylesheet" />
+    <style>
+       
+        #searchBox {
+    
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+        
+#searchBox {
+    
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#input {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #222;
+}
+
+#searchBtn {
+    width:30%;
+    margin:auto;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background: crimson;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align:center;
+}
+
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -18,8 +62,8 @@
             <ul>
                 <li>
                     <div id="searchBox">
-                        <input type="text" id="input" placeholder="Search" />
-                        <button id="searchBtn">Tìm kiếm</button>
+                        <input style="width:" type="text" id="input" placeholder="Search" />
+                        <button class="" id="searchBtn">Tìm kiếm</button>
                     </div>
                 </li>
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>
@@ -45,7 +89,7 @@
                 <h2 class="login-label">Đăng Nhập</h2>
                 <asp:TextBox ID="lemail" CssClass="input1" type="email" runat="server" placeholder="Email"></asp:TextBox>
                 <asp:TextBox ID="lpassword" CssClass="input1" type="password" runat="server" placeholder="Password"></asp:TextBox>
-                <asp:Button  ID="Button1" CssClass="button1" runat="server" Text="Đăng Nhập" OnClick="Button1_Click" />
+                <asp:Button  ID="Button1" CssClass="btnDangNhap" runat="server" Text="Đăng Nhập" OnClick="btnDangNhap_Click" />
             </div>
 
             <div class="signup-form form" runat="server">
@@ -55,7 +99,7 @@
                 <asp:TextBox ID="semail" CssClass="input1" type="email" runat="server" placeholder="Email"></asp:TextBox>
                 <asp:TextBox ID="spassword" CssClass="input1" type="password" runat="server" placeholder="Password"></asp:TextBox>
 
-                <asp:Button  ID="Button2" CssClass="button1" runat="server" Text="Đăng Ký" OnClick="Button2_Click" />
+                <asp:Button  ID="Button2" CssClass="btnDangKy" runat="server" Text="Đăng Ký" OnClick="btnDangKy_Click" />
 
             </div>
         </div>

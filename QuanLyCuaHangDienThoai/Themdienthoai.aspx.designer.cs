@@ -510,13 +510,13 @@ namespace QuanLyCuaHangDienThoai
         protected global::System.Web.UI.WebControls.Label Label34;
 
         /// <summary>
-        /// ddPhanTramKM control.
+        /// txtPhanTramKM control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddPhanTramKM;
+        protected global::System.Web.UI.WebControls.TextBox txtPhanTramKM;
 
         /// <summary>
         /// Label35 control.
@@ -616,6 +616,24 @@ namespace QuanLyCuaHangDienThoai
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fupAnh4;
+
+        /// <summary>
+        /// Label12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label12;
+
+        /// <summary>
+        /// txtGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtGia;
 
         /// <summary>
         /// Label2 control.

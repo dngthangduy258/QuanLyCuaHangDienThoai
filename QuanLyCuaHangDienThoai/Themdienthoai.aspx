@@ -283,7 +283,7 @@
                 </div>
                 <div class="sel-2">
                     <asp:Label ID="Label34" runat="server" Text="Phần trăm:"></asp:Label>
-                    <asp:DropDownList CssClass="" ID="ddPhanTramKM" runat="server" DataSourceID="dsKhuyenMai" DataTextField="PhanTramGiam" DataValueField="PhanTramGiam"></asp:DropDownList>
+                    <asp:TextBox CssClass="sel-2" Width="" ID="txtPhanTramKM" runat="server"></asp:TextBox>
                 </div>
             </div>
             <br />
@@ -311,6 +311,11 @@
                     <asp:Label ID="Label40" runat="server" Text="Ảnh 4:"></asp:Label>
                     <asp:FileUpload CssClass="" ID="fupAnh4" runat="server" />
                 </div>
+            </div>
+             <br />
+            <div class="grid-1">
+                <asp:Label ID="Label12" runat="server" Text="Giá:"></asp:Label>
+                <asp:TextBox CssClass="input-text" ID="txtGia" runat="server" placeholder="Giá điện thoại..."></asp:TextBox>
             </div>
             <br />
             <div class="grid-1">

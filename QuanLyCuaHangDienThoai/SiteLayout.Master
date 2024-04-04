@@ -1,9 +1,10 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteLayout.master.cs" Inherits="QuanLyCuaHangDienThoai.SiteLayout" %>
 
 <!DOCTYPE html>
-<% int ktDangNhap;
+<% int ktDangNhap,ktNhanVien;
     string name = "";
     int ktDangNhap2;
+
     if (Request.QueryString["x"] != null)
     {
         string txt = Request.QueryString["x"];
@@ -22,20 +23,27 @@
     else
     {
         ktDangNhap = 0;
-    } %>
+    }
+    if (Session["ktNhanVien"] != null)
+    {
+        ktNhanVien = (int)Session["ktNhanVien"];
+    }
+    
+    %>
 <html>
 <head runat="server">
     <meta charset="UTF-8">
     <title>CodePen - Magic Navigation Menu 3</title>
-    <link href="style.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
+    <link href="style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 <body>
 
-    <nav class="nav">
+    <nav class="nav" style="float">
         <div class="container">
             <h1 class="logo">
                 <a href="#">Logo</a>
@@ -44,7 +52,7 @@
                 <li>
                     <div id="searchBox">
                         <input type="text" id="input" placeholder="Search" />
-                        <button id="searchBtn">Tìm kiếm</button>
+                        <button  style="margin:auto; text-align:center;width:40%;height:110%" id="searchBtn">Tìm kiếm</button>
                     </div>
                 </li>
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>

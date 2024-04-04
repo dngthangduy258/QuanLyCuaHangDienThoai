@@ -27,7 +27,7 @@ namespace QuanLyCuaHangDienThoai
             
             //Tên điện thoại
             string tenDT = txtTen.Text;
-
+            string giaDT = txtGia.Text;
             //Màn hình
 			string congNghe = ddlManHinh1.SelectedItem.ToString();          //Công nghệ
             string doPhanGiai = ddlManHinh2.SelectedItem.ToString();        //Độ phân giải màn hình
@@ -59,7 +59,7 @@ namespace QuanLyCuaHangDienThoai
             string soKheSim = ddSimSoKhe.SelectedItem.ToString();           //Số khe sim
 
             string khuyenMai = ddTenKM.SelectedItem.ToString();             //Tên khuyến mãi
-            string phanTramKM = ddPhanTramKM.SelectedItem.ToString();       //Phần trăm KM
+            string phanTramKM = txtPhanTramKM.Text;       //Phần trăm KM
 
             string thongTin = txtThongTin.Text;                             //Thông tin điện thoại
             //Insert vào màn hình
@@ -125,7 +125,7 @@ namespace QuanLyCuaHangDienThoai
 
             if (fupAnhBia.HasFile)
             {
-                string path = Server.MapPath("~/Upload/") + fupAnhBia.FileName;
+                string path = Server.MapPath("~/images/dienthoai/") + fupAnhBia.FileName;
                 fupAnhBia.SaveAs(path);
                 cmdHinhAnh.Parameters.AddWithValue("@AnhBia", fupAnhBia.FileName);
             }
@@ -136,7 +136,7 @@ namespace QuanLyCuaHangDienThoai
 
             if (fupAnh1.HasFile)
             {
-                string path = Server.MapPath("~/Upload/") + fupAnh1.FileName;
+                string path = Server.MapPath("~/images/dienthoai/") + fupAnh1.FileName;
                 fupAnh1.SaveAs(path);
                 cmdHinhAnh.Parameters.AddWithValue("@AnhBia1", fupAnh1.FileName);
             }
@@ -147,7 +147,7 @@ namespace QuanLyCuaHangDienThoai
 
             if (fupAnh2.HasFile)
             {
-                string path = Server.MapPath("~/Upload/") + fupAnh2.FileName;
+                string path = Server.MapPath("~/images/dienthoai/") + fupAnh2.FileName;
                 fupAnh2.SaveAs(path);
                 cmdHinhAnh.Parameters.AddWithValue("@AnhBia2", fupAnh2.FileName);
             }
@@ -158,7 +158,7 @@ namespace QuanLyCuaHangDienThoai
 
             if (fupAnh3.HasFile)
             {
-                string path = Server.MapPath("~/Upload/") + fupAnh3.FileName;
+                string path = Server.MapPath("~/images/dienthoai/") + fupAnh3.FileName;
                 fupAnh3.SaveAs(path);
                 cmdHinhAnh.Parameters.AddWithValue("@AnhBia3", fupAnh3.FileName);
             }
@@ -169,7 +169,7 @@ namespace QuanLyCuaHangDienThoai
 
             if (fupAnh4.HasFile)
             {
-                string path = Server.MapPath("~/Upload/") + fupAnh4.FileName;
+                string path = Server.MapPath("~/images/dienthoai/") + fupAnh4.FileName;
                 fupAnh4.SaveAs(path);
                 cmdHinhAnh.Parameters.AddWithValue("@AnhBia4", fupAnh4.FileName);
             }
@@ -191,7 +191,7 @@ namespace QuanLyCuaHangDienThoai
             cmdKM.ExecuteNonQuery();
             cmdHinhAnh.ExecuteNonQuery();
 
-            insertDienThoai(tenDT, thongTin);
+            insertDienThoai(tenDT,giaDT, thongTin);
       
            
         }
@@ -211,7 +211,7 @@ namespace QuanLyCuaHangDienThoai
             }
                 return id;
         }
-        protected void insertDienThoai(string TenDT, string thongTinDT)
+        protected void insertDienThoai(string TenDT,string giaDT, string thongTinDT)
         {
             int idHang = SelectThongTin("Hang");
             int idManHinh = SelectThongTin("ManHinh");
@@ -230,7 +230,7 @@ namespace QuanLyCuaHangDienThoai
             string chuoi_ket_noi = ConfigurationManager.ConnectionStrings["connQuanLyCuaHangDienThoai"].ConnectionString;
             SqlConnection conn = new SqlConnection(chuoi_ket_noi);
             conn.Open();
-            string sql = "INSERT INTO DienThoai (TenDienThoai,IDManHinh,IDHang,IDHeDieuHanh,IDCameraTruoc,IDCameraSau,IDRam,IDDungLuong,IDSim,IDPin,IDSac,IDKhuyenMai,IDHinhAnh,ThongTin) VALUES (@TenDienThoai,@IDManHinh,@IDHang,@IDHeDieuHanh,@IDCameraTruoc,@IDCameraSau,@IDRam,@IDDungLuong,@IDSim,@IDPin,@IDSac,@IDKhuyenMai,@IDHinhAnh,@ThongTin)";
+            string sql = "INSERT INTO DienThoai (TenDienThoai,IDManHinh,IDHang,IDHeDieuHanh,IDCameraTruoc,IDCameraSau,IDRam,IDDungLuong,IDSim,IDPin,IDSac,IDKhuyenMai,IDHinhAnh,ThongTin,Gia) VALUES (@TenDienThoai,@IDManHinh,@IDHang,@IDHeDieuHanh,@IDCameraTruoc,@IDCameraSau,@IDRam,@IDDungLuong,@IDSim,@IDPin,@IDSac,@IDKhuyenMai,@IDHinhAnh,@ThongTin,@Gia)";
 
 
 
@@ -249,7 +249,7 @@ namespace QuanLyCuaHangDienThoai
             cmd.Parameters.AddWithValue("@IDKhuyenMai", idKM);
             cmd.Parameters.AddWithValue("@IDHinhAnh", idHinhAnh);
             cmd.Parameters.AddWithValue("@ThongTin", thongTinDT);
-
+            cmd.Parameters.AddWithValue("@Gia", giaDT);
             cmd.ExecuteNonQuery();
 
 

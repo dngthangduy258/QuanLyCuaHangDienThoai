@@ -37,7 +37,7 @@ namespace QuanLyCuaHangDienThoai
         //Kết thúc hàm dùng để mã hóa password theo chuẩn MD5
 
         //Đây là button đăng nhập
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnDangNhap_Click(object sender, EventArgs e)
         {
             string email = lemail.Text;
             string password = lpassword.Text;
@@ -62,6 +62,7 @@ namespace QuanLyCuaHangDienThoai
                         Session["ktDangNhap"] = 1;
                         Session["name"] = (string)reader["Ten"];
                         Boolean checkNhanVien =  (Boolean)reader["LaNhanVien"];
+                        
                         if (checkNhanVien == true)
                         {
                             Session["ktNhanVien"] = 1;
@@ -93,7 +94,7 @@ namespace QuanLyCuaHangDienThoai
 
 
         //Đây là button đăng ký
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void btnDangKy_Click(object sender, EventArgs e)
         {
             string Ten = fname.Text+" "+lname.Text;
             string email = semail.Text;

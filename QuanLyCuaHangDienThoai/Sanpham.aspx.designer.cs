@@ -15,6 +15,15 @@ namespace QuanLyCuaHangDienThoai
     {
 
         /// <summary>
+        /// rptDropHang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptDropHang;
+
+        /// <summary>
         /// dsDienThoai control.
         /// </summary>
         /// <remarks>
@@ -24,12 +33,12 @@ namespace QuanLyCuaHangDienThoai
         protected global::System.Web.UI.WebControls.SqlDataSource dsDienThoai;
 
         /// <summary>
-        /// gvDienThoai control.
+        /// dsHang control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDienThoai;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsHang;
     }
 }

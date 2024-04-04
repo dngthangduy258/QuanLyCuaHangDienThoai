@@ -78,29 +78,43 @@
                 font-size: 11px
             }
         }
+
     </style>
+
     <!-- Slideshow container -->
     <div class="hero">
-        <div class="container">
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <a href="#">
-                        <img src="images/slides/img1.png" style="width: 100%">
-                    </a>
+        <div class="">
+            <div class="row">
+
+                <div class="col-3">
+                    left side
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>                                 
-                     <a href="#">
-                        <img src="images/slides/img2.png" style="width: 100%">
-                    </a>
+                <div class="col-6">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 3</div>
+                            <a href="#">
+                                <img src="images/slides/img1.png" style="width: 100%">
+                            </a>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>                                 
+                             <a href="#">
+                                <img src="images/slides/img2.png" style="width: 100%">
+                            </a>
+                        </div>
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                             <a href="#">
+                                <img src="images/slides/img3.png" style="width: 100%">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                     <a href="#">
-                        <img src="images/slides/img3.png" style="width: 100%">
-                    </a>
+                <div class="col-3">
+                    right side
                 </div>
+                
             </div>
             <br>
             <div style="text-align: center ; " >
@@ -160,7 +174,7 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 3000); // Change image every 2 seconds
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
     </script>
 
