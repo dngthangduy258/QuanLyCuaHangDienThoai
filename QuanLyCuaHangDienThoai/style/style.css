@@ -10,10 +10,6 @@ body {
     padding-bottom: 50px;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 .nav {
     position: fixed;
@@ -46,9 +42,21 @@ body {
         transition: all 0.3s ease-in-out;
     }
 
+
+
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
     /* ------- JavaScript -------*/
     .nav.active {
+        position: -webkit-sticky;
         background: white;
+        display: block;
+        position: sticky;
     }
 
         .nav.active a {
@@ -56,44 +64,7 @@ body {
         }
 /* -------------- */
 
-.hero {
-    background: url(https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom center;
-    height: 100vh;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    margin-bottom: 20px;
-    z-index: -2;
-}
 
-    .hero:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7);
-        z-index: -1;
-    }
-
-    .hero h1 {
-        font-size: 46px;
-        margin: -20px 0 20px;
-    }
-
-    .hero p {
-        font-size: 20px;
-        letter-spacing: 1px;
-        max-width: 700px;
-        line-height: 30px;
-    }
 
 .content-container {
     display: flex;
@@ -119,3 +90,42 @@ body {
         font-family: sans-serif;
         line-height: 24px;
     }
+
+#searchBox {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#searchBox {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#input {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: #222;
+}
+
+#searchBtn {
+    width: 30%;
+    margin: auto;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background: crimson;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+}

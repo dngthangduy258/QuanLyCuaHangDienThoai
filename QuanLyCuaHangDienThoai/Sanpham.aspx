@@ -86,6 +86,8 @@ margin-top: 40px
                         <div class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sản phẩm</a>
                               <div class="dropdown-menu">
+                                          <a class="dropdown-item" href='/Sanpham.aspx' value="">Tất cả</a>
+
                                   <asp:Repeater id="rptDropHang" DataSourceID="dsHang" runat="server">
                                       <ItemTemplate>
                                           <a class="dropdown-item" href='/Sanpham.aspx?hang=<%#Eval("Ten") %>' value="<%#Eval("Ten") %>"><%#Eval("Ten") %></a>
@@ -119,7 +121,7 @@ margin-top: 40px
                                     <i><img src="images/star.png"/></i>
                                     <i><img src="images/star.png"/></i>
                                     <i><img src="images/star.png"/></i><br />
-                                    <button style="background-color:red;border:1px;border-radius:3px;padding:4px 6px;margin-top:5px;color:white;font-weight:bold"> Add to crat</button>
+                                   <asp:Button ID="btAddToCart" runat="server" CssClass="btn btn-danger" Text="Thêm vào giỏ" CommandArgument='<%# Eval("ID") %>' OnClick="btAddToCart_Click" />
                                 </div>
                             </div>
                         </ItemTemplate>

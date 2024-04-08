@@ -116,7 +116,7 @@ label {
     font-weight: normal;
 }
 
-.button1,.searchBtn,#Button2 {
+.button1, .searchBtn, #Button2 {
     background: transparent;
     border: 2px solid;
     color: #cf0b4c;
@@ -127,7 +127,17 @@ label {
     font-size: 16px;
     cursor: pointer;
 }
-
+#Button1 {
+    background: transparent;
+    border: 2px solid;
+    color: #cf0b4c;
+    width: 120px;
+    height: 40px;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+    font-size: 16px;
+    cursor: pointer;
+}
 .form button:hover {
     background-color: #cf0b4c;
     color: #fff;

@@ -96,15 +96,18 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Dangnhap.aspx" />
-    <Content Include="styledangnhap.css" />
+    <Content Include="style\styledangnhap.css" />
     <Content Include="Themdienthoai.aspx" />
     <Content Include="Trangchu.aspx" />
-    <Content Include="style.css" />
     <Content Include="style\app.js" />
     <Content Include="style\style.css" />
     <Content Include="Web.config" />
+    <Content Include="Xemgiohang.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\user.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -144,6 +147,13 @@
     <Compile Include="SiteLayout.Master.designer.cs">
       <DependentUpon>SiteLayout.Master</DependentUpon>
     </Compile>
+    <Compile Include="Xemgiohang.aspx.cs">
+      <DependentUpon>Xemgiohang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xemgiohang.aspx.designer.cs">
+      <DependentUpon>Xemgiohang.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -179,7 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <PropertyGroup>

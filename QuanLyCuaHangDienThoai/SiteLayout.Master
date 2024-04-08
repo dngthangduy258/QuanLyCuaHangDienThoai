@@ -1,15 +1,17 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteLayout.master.cs" Inherits="QuanLyCuaHangDienThoai.SiteLayout" %>
 
 <!DOCTYPE html>
-<% int ktDangNhap,ktNhanVien;
+<% int ktDangNhap, ktNhanVien;
     string name = "";
     int ktDangNhap2;
-
     if (Request.QueryString["x"] != null)
     {
         string txt = Request.QueryString["x"];
-
         ktDangNhap2 = int.Parse(txt);
+        Session.Remove("ktDangNhap");
+        Session.Remove("ktNhanVien");
+        Session.Remove("name");
+        Session.Remove("idNhanVien");
     }
     else
     {
@@ -28,22 +30,25 @@
     {
         ktNhanVien = (int)Session["ktNhanVien"];
     }
-    
-    %>
+    else
+    {
+        ktNhanVien = 0;
+    }
+
+%>
 <html>
 <head runat="server">
     <meta charset="UTF-8">
     <title>CodePen - Magic Navigation Menu 3</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-
-    <link href="style.css" rel="stylesheet" />
+    <link href="style/style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 <body>
 
-    <nav class="nav" style="float">
+    <nav style="font-size:15px" class="nav">
         <div class="container">
             <h1 class="logo">
                 <a href="#">Logo</a>
@@ -52,21 +57,42 @@
                 <li>
                     <div id="searchBox">
                         <input type="text" id="input" placeholder="Search" />
-                        <button  style="margin:auto; text-align:center;width:40%;height:110%" id="searchBtn">Tìm kiếm</button>
+                        <button class="searchBtn" id="searchBtn">Tìm kiếm</button>
                     </div>
                 </li>
+                
+                <%if (ktNhanVien == 0)
+                    {  %>
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>
                 <li><a href="SanPham.aspx">Sản phẩm</a></li>
-                <li><a href="#">Giỏ hàng</a></li>
-                <% if (ktDangNhap == 0 || ktDangNhap2 ==0)
+                <li><a href="Xemgiohang.aspx">Giỏ hàng</a></li>
+                <% if (ktDangNhap == 0 || ktDangNhap2 == 0)
                     {                %>
                 <li><a href="Dangnhap.aspx">Đăng nhập / Đăng ký</a></li>
                 <%}
-                    else if(ktDangNhap == 1)
+                    else if (ktDangNhap == 1)
                     {  %>
-                    <li><a href="Trangchu.aspx?x=0">Đăng xuất</a></li>
-                    <li><a href="Trangchu.aspx"><%=name%></a></li>
-                <%} %>
+                <li><a href="Trangchu.aspx?x=0">Đăng xuất</a></li>
+                <li><a href="Trangchu.aspx"><%=name%></a></li>
+                <%}
+                    }
+                    else
+                    {%>
+                <li><a href="Trangchu.aspx">Trang chủ</a></li>
+                <li><a href="SanPham.aspx">Sản phẩm</a></li>
+                <li><a href="Xemgiohang.aspx">Giỏ hàng</a></li>
+                <li><a href="Themdienthoai.aspx">Thêm điện thoại</a></li>
+                
+                 <% if (ktDangNhap == 0 || ktDangNhap2 == 0)
+                     {                %>
+                <li><a href="Dangnhap.aspx">Đăng nhập / Đăng ký</a></li>
+                <%}
+                    else if (ktDangNhap == 1)
+                    {  %>
+                <li><a href="Trangchu.aspx?x=0">Đăng xuất</a></li>
+                <li><a href="Trangchu.aspx"><%=name%></a></li>
+                <%}
+                    }%>
             </ul>
         </div>
     </nav>

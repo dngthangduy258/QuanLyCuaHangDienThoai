@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangDienThoai.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -62,7 +63,12 @@ namespace QuanLyCuaHangDienThoai
                         Session["ktDangNhap"] = 1;
                         Session["name"] = (string)reader["Ten"];
                         Boolean checkNhanVien =  (Boolean)reader["LaNhanVien"];
+
                         
+                        int idNhanVien = (int)reader["ID"];
+
+                        Session["idNhanVien"] = idNhanVien;
+
                         if (checkNhanVien == true)
                         {
                             Session["ktNhanVien"] = 1;

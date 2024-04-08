@@ -14,17 +14,27 @@
 
         .mySlides {
             display: none;
+            position: fixed;
+            margin: auto;
+            text-align:center;
+            
         }
 
         img {
             vertical-align: middle;
+            width:100%; height:auto;
+
         }
 
         /* Slideshow container */
         .slideshow-container {
-            max-width: 1000px;
+            max-width: 100%;
             position: relative;
             margin: auto;
+            display: block;
+              margin-left: auto;
+              margin-right: auto;
+              width: 50%;
         }
 
         /* Caption text */
@@ -49,7 +59,6 @@
 
         /* The dots/bullets/indicators */
         .dot {
-            
         }
 
         .active {
@@ -78,52 +87,39 @@
                 font-size: 11px
             }
         }
-
     </style>
 
     <!-- Slideshow container -->
-    <div class="hero">
-        <div class="">
-            <div class="row">
 
-                <div class="col-3">
-                    left side
-                </div>
-                <div class="col-6">
-                    <div class="slideshow-container">
-                        <div class="mySlides fade">
-                            <div class="numbertext">1 / 3</div>
-                            <a href="#">
-                                <img src="images/slides/img1.png" style="width: 100%">
-                            </a>
-                        </div>
-                        <div class="mySlides fade">
-                            <div class="numbertext">2 / 3</div>                                 
-                             <a href="#">
-                                <img src="images/slides/img2.png" style="width: 100%">
-                            </a>
-                        </div>
-                        <div class="mySlides fade">
-                            <div class="numbertext">3 / 3</div>
-                             <a href="#">
-                                <img src="images/slides/img3.png" style="width: 100%">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    right side
-                </div>
-                
+    <div style="">
+        <div class=" slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <a href="#">
+                    <img src="images/slides/img1.png">
+                </a>
             </div>
-            <br>
-            <div style="text-align: center ; " >
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <a href="#">
+                    <img src="images/slides/img2.png">
+                </a>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <a href="#">
+                    <img src="images/slides/img3.png">
+                </a>
             </div>
         </div>
+        <br>
+        <div style="text-align: center;">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
+
 
     <div class="content-container">
         <section class="content">
@@ -155,7 +151,6 @@
             </p>
         </section>
     </div>
-
     <script>
         let slideIndex = 0;
         showSlides();
