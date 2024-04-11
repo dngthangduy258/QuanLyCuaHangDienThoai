@@ -47,6 +47,8 @@
         </div>
         <div class="col-md-6 text-right">
             <asp:Label ID="lbTongTien" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lbTongTienH" runat="server" Visible="false" Text=""></asp:Label>
+
         </div>
     </div>
     <div class="row" style="padding-bottom: 10px">

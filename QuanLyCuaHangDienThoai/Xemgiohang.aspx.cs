@@ -16,6 +16,7 @@ using System.Net;
 using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 using System.Runtime.CompilerServices;
+using System.Data;
 
 namespace QuanLyCuaHangDienThoai
 {
@@ -109,6 +110,7 @@ namespace QuanLyCuaHangDienThoai
                 gvGioHang.DataBind();
                 //gán tổng thành tiền cho Label
                 lbTongTien.Text = string.Format("Tổng thành tiền: <b> {0: #,##0} đồng </b>",cart.Total);
+                lbTongTienH.Text = cart.Total.ToString();
             }
         }
         public void gvGioHang_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -160,17 +162,94 @@ namespace QuanLyCuaHangDienThoai
             // Lấy giá trị của TextBox txtDiaChi
             string diaChi = txtDiaChi.Text;
 
+            DateTime NgayMua = DateTime.Now;
+            
+            
+            int tongTien = Int32.Parse(lbTongTienH.Text);
             // Lấy giá trị của "IDDienThoai" từ GridView gvGioHang
-            List<string> idDienThoaiList = new List<string>();
+            List<Product> gioHang = new List<Product>();
             foreach (GridViewRow row in gvGioHang.Rows)
             {
+                Product item = new Product();
+                int idDienThoai = -1;
                 if (row.RowType == DataControlRowType.DataRow)
                 {
                     // Lấy giá trị của "IDDienThoai" từ DataKeys
-                    string idDienThoai = gvGioHang.DataKeys[row.RowIndex].Value.ToString();
-                    idDienThoaiList.Add(idDienThoai);
-                }`
+                    idDienThoai =Int32.Parse(gvGioHang.DataKeys[row.RowIndex].Value.ToString());
+                    item.ID = idDienThoai;
+
+                }
+                int soLuong = -1;
+                TextBox txtSoLuong = (TextBox)row.FindControl("txtSoLuong");
+                if (txtSoLuong != null)
+                {
+                    soLuong = Int32.Parse(txtSoLuong.Text);
+                    item.SoLuong= soLuong;
+                }
+
+                string donGia = row.Cells[2].Text.Replace("$", "").Trim();
+                decimal gia;
+                if (Decimal.TryParse(donGia, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CurrentCulture, out gia))
+                {
+                    test.Text = gia.ToString();
+                    item.DonGia = gia;
+                }
+                gioHang.Add(item);
             }
+
+
+            string chuoi_ket_noi = ConfigurationManager.ConnectionStrings["connQuanLyCuaHangDienThoai"].ConnectionString;
+            SqlConnection conn = new SqlConnection(chuoi_ket_noi);
+            conn.Open();
+            
+                string idSQL = "SELECT ID FROM Users WHERE Email = @Email";
+                SqlCommand cmdID = new SqlCommand(idSQL, conn);
+                cmdID.Parameters.AddWithValue("@Email", email);
+                 int IDUser = 0;
+                 using (SqlDataReader reader = cmdID.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        IDUser = Convert.ToInt32(reader["ID"]);
+                    }
+                }
+
+
+
+            string sql = "INSERT INTO [HoaDon] (IDUSER,SoDienThoai,NgayMua,TongTien) VALUES (@IDUSER,@SoDienThoai,@NgayMua,@TongTien) ";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@IDUSER", IDUser);
+            cmd.Parameters.AddWithValue("@SoDienThoai", sdt);
+            cmd.Parameters.AddWithValue("@NgayMua", NgayMua);
+            cmd.Parameters.AddWithValue("@TongTien", tongTien);
+            cmd.ExecuteNonQuery();
+
+
+            int idHoaDon = 0;
+            string sqlHoaDon = "SELECT TOP 1 ID FROM HoaDon ORDER BY ID DESC";
+            SqlCommand cmdHoaDon = new SqlCommand(sqlHoaDon, conn);         
+            using (SqlDataReader readerHD = cmdHoaDon.ExecuteReader())
+            {
+                while (readerHD.Read())
+                {
+                    idHoaDon = Convert.ToInt32(readerHD["ID"]);
+                }
+            }
+
+            foreach (Product item in gioHang)
+            {
+                string sqlChiTiet = "INSERT INTO [ChiTietHoaDon](IdHoaDon,IdDienThoai,SoLuong,DonGia) VALUES (@IdHoaDon,@IdDienThoai,@SoLuong,@DonGia)";
+                SqlCommand cmdChiTiet = new SqlCommand(sqlChiTiet, conn);
+                cmdChiTiet.Parameters.AddWithValue("@IdHoaDon", idHoaDon);
+                cmdChiTiet.Parameters.AddWithValue("@IdDienThoai", item.ID);
+                cmdChiTiet.Parameters.AddWithValue("@SoLuong", item.SoLuong);
+                cmdChiTiet.Parameters.AddWithValue("@DonGia", item.DonGia);
+                cmdChiTiet.ExecuteNonQuery();
+            }
+            test.Text = "Thêm thành công";
+
+
+
 
             // Tiếp tục xử lý các giá trị khác và thực hiện logic đặt hàng
 
