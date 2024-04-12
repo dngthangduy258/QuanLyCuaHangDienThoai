@@ -11,26 +11,17 @@ namespace QuanLyCuaHangDienThoai
 {
 
 
-    public partial class Sanpham
+    public partial class SuaDienThoai_aspx
     {
 
         /// <summary>
-        /// rptDropHang control.
+        /// gvDienThoai control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptDropHang;
-
-        /// <summary>
-        /// btnSeeMore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeeMore;
+        protected global::System.Web.UI.WebControls.GridView gvDienThoai;
 
         /// <summary>
         /// dsDienThoai control.
@@ -40,14 +31,5 @@ namespace QuanLyCuaHangDienThoai
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dsDienThoai;
-
-        /// <summary>
-        /// dsHang control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsHang;
     }
 }

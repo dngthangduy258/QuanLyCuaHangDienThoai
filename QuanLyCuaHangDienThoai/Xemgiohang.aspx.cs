@@ -162,6 +162,7 @@ namespace QuanLyCuaHangDienThoai
             // Lấy giá trị của TextBox txtDiaChi
             string diaChi = txtDiaChi.Text;
 
+            string location = diaChi.Trim() + ", "+quanHuyen+", "+tinh;
             DateTime NgayMua = DateTime.Now;
             
             
@@ -216,12 +217,13 @@ namespace QuanLyCuaHangDienThoai
 
 
 
-            string sql = "INSERT INTO [HoaDon] (IDUSER,SoDienThoai,NgayMua,TongTien) VALUES (@IDUSER,@SoDienThoai,@NgayMua,@TongTien) ";
+            string sql = "INSERT INTO [HoaDon] (IDUSER,SoDienThoai,NgayMua,TongTien,DiaChi) VALUES (@IDUSER,@SoDienThoai,@NgayMua,@TongTien,@DiaChi) ";
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@IDUSER", IDUser);
             cmd.Parameters.AddWithValue("@SoDienThoai", sdt);
             cmd.Parameters.AddWithValue("@NgayMua", NgayMua);
             cmd.Parameters.AddWithValue("@TongTien", tongTien);
+            cmd.Parameters.AddWithValue("@DiaChi", location);
             cmd.ExecuteNonQuery();
 
 

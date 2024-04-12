@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.IO;
 namespace QuanLyCuaHangDienThoai
 {
     public partial class Sanpham : System.Web.UI.Page
@@ -40,6 +40,20 @@ namespace QuanLyCuaHangDienThoai
             cart.Add(id);
             //thông báo cho người dùng (hoặc chuyển hướng đến trang XemGio.aspx)
             Response.Write("<script> alert('Đã thêm sản phẩm vào giỏ') </script>");
+        }
+        protected void btnSua_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string id = btn.CommandArgument;
+            Response.Redirect("SuaDienThoai.aspx?ID=" + id);
+        }
+
+        protected void btnSeeMore_Click(object sender, EventArgs e)
+        {
+            Application["DemLuot"] = (int)Application["DemLuot"] + 1;
+            int page = (int)Application["DemLuot"];
+            Response.Redirect("Sanpham.aspx?page="+page);
+
         }
     }
 }

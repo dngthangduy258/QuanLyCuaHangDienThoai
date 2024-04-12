@@ -12,6 +12,8 @@
         Session.Remove("ktNhanVien");
         Session.Remove("name");
         Session.Remove("idNhanVien");
+        Application.Remove("DemLuot");
+        Application["DemLuot"] = 1;
     }
     else
     {
@@ -54,12 +56,7 @@
                 <a href="#">Logo</a>
             </h1>
             <ul>
-                <li>
-                    <div id="searchBox">
-                        <input type="text" id="input" placeholder="Search" />
-                        <button class="searchBtn" id="searchBtn">Tìm kiếm</button>
-                    </div>
-                </li>
+                
                 
                 <%if (ktNhanVien == 0)
                     {  %>
@@ -80,7 +77,7 @@
                     {%>
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>
                 <li><a href="SanPham.aspx">Sản phẩm</a></li>
-                <li><a href="Xemgiohang.aspx">Giỏ hàng</a></li>
+                <li><a href="HoaDon.aspx">Hóa đơn</a></li>
                 <li><a href="Themdienthoai.aspx">Thêm điện thoại</a></li>
                 
                  <% if (ktDangNhap == 0 || ktDangNhap2 == 0)

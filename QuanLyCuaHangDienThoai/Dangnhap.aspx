@@ -60,12 +60,7 @@
                 <a href="#">Logo</a>
             </h1>
             <ul>
-                <li>
-                    <div id="searchBox">
-                        <input style="width:" type="text" id="input" placeholder="Search" />
-                        <button class="" id="searchBtn">Tìm kiếm</button>
-                    </div>
-                </li>
+               
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>
                 <li><a href="SanPham.aspx">Sản phẩm</a></li>
                 <li><a href="#">Giỏ hàng</a></li>

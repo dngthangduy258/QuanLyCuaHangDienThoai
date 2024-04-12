@@ -11,43 +11,61 @@ namespace QuanLyCuaHangDienThoai
 {
 
 
-    public partial class Sanpham
+    public partial class HoaDon
     {
 
         /// <summary>
-        /// rptDropHang control.
+        /// txtSDT control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptDropHang;
+        protected global::System.Web.UI.WebControls.TextBox txtSDT;
 
         /// <summary>
-        /// btnSeeMore control.
+        /// btTraCuu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSeeMore;
+        protected global::System.Web.UI.WebControls.Button btTraCuu;
 
         /// <summary>
-        /// dsDienThoai control.
+        /// divNoResults control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsDienThoai;
+        protected global::System.Web.UI.WebControls.Label divNoResults;
 
         /// <summary>
-        /// dsHang control.
+        /// gvHoaDon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource dsHang;
+        protected global::System.Web.UI.WebControls.GridView gvHoaDon;
+
+        /// <summary>
+        /// test control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label test;
+
+        /// <summary>
+        /// dsHoaDon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsHoaDon;
     }
 }
