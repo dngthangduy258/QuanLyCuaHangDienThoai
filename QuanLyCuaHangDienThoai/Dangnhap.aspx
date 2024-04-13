@@ -58,7 +58,7 @@
         <div class="container">
             <h1 class="logo">
               <a href="#">
-                    <img style="height:80px" src="images/DNKSTORE2.png" />
+                    <img style="height:45px" src="images/DNKSTORE2.png" />
                    </a>
             </h1>
             <ul>

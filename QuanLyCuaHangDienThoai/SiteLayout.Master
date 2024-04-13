@@ -41,7 +41,7 @@
 <html>
 <head runat="server">
     <meta charset="UTF-8">
-    <title>CodePen - Magic Navigation Menu 3</title>
+    
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="style/style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">

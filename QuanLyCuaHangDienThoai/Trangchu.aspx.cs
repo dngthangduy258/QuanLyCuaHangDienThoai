@@ -11,7 +11,7 @@ namespace QuanLyCuaHangDienThoai
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Page.Title = "Trang chủ";
         }
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
