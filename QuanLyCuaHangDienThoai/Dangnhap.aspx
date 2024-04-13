@@ -57,13 +57,15 @@
     <nav class="nav">
         <div class="container">
             <h1 class="logo">
-                <a href="#">Logo</a>
+              <a href="#">
+                    <img style="height:80px" src="images/DNKSTORE2.png" />
+                   </a>
             </h1>
             <ul>
                
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>
                 <li><a href="SanPham.aspx">Sản phẩm</a></li>
-                <li><a href="#">Giỏ hàng</a></li>
+                <li><a href="LienHe.aspx">Liên hệ</a></li>
                 <li><a href="Dangnhap.aspx">Đăng nhập</a></li>
             </ul>
         </div>

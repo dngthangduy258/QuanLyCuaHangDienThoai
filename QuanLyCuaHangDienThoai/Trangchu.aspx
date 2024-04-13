@@ -4,124 +4,84 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
-        * {
-            box-sizing: border-box;
+        /** brand **/
+        .brand {
+            padding-top: px;
+            border-top: #db0000 solid 6px;
         }
 
-        body {
-            font-family: Verdana, sans-serif;
+        .brand-bg {
+            background: #ebebeb;
+            padding: 20px 0px;
+            font-family: Myriad Pro;
         }
 
-        .mySlides {
-            display: none;
-            position: fixed;
-            margin: auto;
-            text-align:center;
-            
+        .margin {
+            margin-bottom: 30px;
         }
 
-        img {
-            vertical-align: middle;
-            width:100%; height:auto;
 
-        }
-
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 100%;
-            position: relative;
-            margin: auto;
-            display: block;
-              margin-left: auto;
-              margin-right: auto;
-              width: 50%;
-        }
-
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
+        .brand-bg .brand_box {
+            background: #fff;
             text-align: center;
+            padding: 80px 0px 30px 0px;
         }
 
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-        }
-
-        /* The dots/bullets/indicators */
-        .dot {
-        }
-
-        .active {
-            background-color: #717171;
-        }
-
-        /* Fading animation */
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {
-                opacity: .4
+            .brand-bg .brand_box > img {
+                height: 200px;
+                width: auto;
             }
 
-            to {
-                opacity: 1
+            .brand-bg .brand_box h3 {
+                font-size: 27px;
+                font-weight: bold;
+                color: #131313;
+                padding: 17px 0px 0px 0px;
             }
+
+        .red {
+            color: #ff0000;
         }
 
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-            .text {
-                font-size: 11px
-            }
+        .brand-bg .brand_box span {
+            display: block;
+            color: gray;
+            font-size: 16px;
+            line-height: 16px;
+            padding-bottom: 3px;
         }
+
+        .brand-bg .brand_box i {
+            padding: 0px 2px;
+        }
+
+        .read-more {
+            font-family: poppins;
+            max-width: 212px;
+            margin: 0 auto;
+            margin-top: 0px;
+            display: block;
+            background: #000;
+            color: #fff !important;
+            padding: 12px 0px;
+            width: 100%;
+            font-size: 17px;
+            text-align: center;
+            border-radius: 32px;
+            margin-top: 40px
+        }
+
+            .read-more:hover {
+                background: #ff0000;
+            }
+
+        /** end brand **/
     </style>
 
     <!-- Slideshow container -->
+    <section class="wrapper" style="height: 500px; background-image: url('../images/background/tgdd-1920x500.png')"></section>
 
-    <div style="">
-        <div class=" slideshow-container">
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <a href="#">
-                    <img src="images/slides/img1.png">
-                </a>
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <a href="#">
-                    <img src="images/slides/img2.png">
-                </a>
-            </div>
-            <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <a href="#">
-                    <img src="images/slides/img3.png">
-                </a>
-            </div>
-        </div>
-        <br>
-        <div style="text-align: center;">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-
-
-    <div class="content-container">
+    <%--<div class="content-container">
         <section class="content">
             <h1>Title 1</h1>
             <p>
@@ -150,27 +110,117 @@
           provident laboriosam tenetur corporis autem temporibus quod, fugiat a,
             </p>
         </section>
+    </div>--%>
+    <div class="brand rounded">
+        <div class="brand-bg rounded">
+            <div class="container mt-3">
+                <div class="row text-bg-info rounded-3">
+                    
+                        <div class="h3 text-bg-info text-light text-center p-3">
+                            IPHONE
+                        </div>
+                        <asp:Repeater runat="server" DataSourceID="dsIphone">
+                            <ItemTemplate>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin rounded-3">
+                                    <div class="brand_box rounded-3">
+                                        <img src="images/dienthoai/<%#Eval("AnhBia") %>" alt="img" />
+                                        <h3><strong class="red"><%#Eval("Gia") %></strong>$</h3>
+                                        <span><%#Eval("TenDienThoai") %></span>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i><br />
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="brand-bg rounded">
+            <div class="container mt-3">
+                <div class="row text-bg-info rounded-3">
+                    
+                        <div class="h3 text-bg-info text-light text-center p-3">
+                            NOKIA
+                        </div>
+                        <asp:Repeater runat="server" DataSourceID="dsNokia">
+                            <ItemTemplate>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                                    <div class="brand_box">
+                                        <img src="images/dienthoai/<%#Eval("AnhBia") %>" alt="img" />
+                                        <h3><strong class="red"><%#Eval("Gia") %></strong>$</h3>
+                                        <span><%#Eval("TenDienThoai") %></span>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i><br />
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                  
+                </div>
+            </div>
+        </div>
+         <div class="brand-bg rounded">
+            <div class="container mt-3">
+                <div class="row text-bg-info rounded-3">
+                    
+                        <div class="h3 text-bg-info text-light text-center p-3">
+                            SAMSSUNG
+                        </div>
+                        <asp:Repeater runat="server" DataSourceID="dsSamSung">
+                            <ItemTemplate>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 margin">
+                                    <div class="brand_box">
+                                        <img src="images/dienthoai/<%#Eval("AnhBia") %>" alt="img" />
+                                        <h3><strong class="red"><%#Eval("Gia") %></strong>$</h3>
+                                        <span><%#Eval("TenDienThoai") %></span>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i>
+                                        <i>
+                                            <img src="images/star.png" /></i><br />
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                  
+                </div>
+            </div>
+        </div>
+
     </div>
-    <script>
-        let slideIndex = 0;
-        showSlides();
+    <div class="brand">
+        
+    </div>
+    <asp:SqlDataSource ID="dsIphone" runat="server" ConnectionString="<%$ ConnectionStrings:connQuanLyCuaHangDienThoai %>" SelectCommand="SELECT TOP 3 DienThoai.*,HinhAnh.*, Hang.* FROM [DienThoai] INNER JOIN HinhAnh ON DienThoai.IDHinhAnh = HinhAnh.ID INNER JOIN Hang ON DienThoai.IDHang = Hang.ID WHERE (Hang.Ten IN (@TenHang))">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="Iphone" Name="TenHang" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-    </script>
-
+     <asp:SqlDataSource ID="dsNokia" runat="server" ConnectionString="<%$ ConnectionStrings:connQuanLyCuaHangDienThoai %>" SelectCommand="SELECT TOP 3 DienThoai.*,HinhAnh.*, Hang.* FROM [DienThoai] INNER JOIN HinhAnh ON DienThoai.IDHinhAnh = HinhAnh.ID INNER JOIN Hang ON DienThoai.IDHang = Hang.ID WHERE (Hang.Ten IN (@TenHang))">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="Nokia" Name="TenHang" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="dsSamSung" runat="server" ConnectionString="<%$ ConnectionStrings:connQuanLyCuaHangDienThoai %>" SelectCommand="SELECT TOP 3 DienThoai.*,HinhAnh.*, Hang.* FROM [DienThoai] INNER JOIN HinhAnh ON DienThoai.IDHinhAnh = HinhAnh.ID INNER JOIN Hang ON DienThoai.IDHang = Hang.ID WHERE (Hang.Ten IN (@TenHang))">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="SamSung" Name="TenHang" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
 </asp:Content>

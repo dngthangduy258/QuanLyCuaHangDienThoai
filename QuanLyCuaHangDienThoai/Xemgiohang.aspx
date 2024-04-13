@@ -85,7 +85,6 @@
             <div class="text-center">
                  <asp:Button  ID="btnDatHang" runat="server" Text="Đặt hàng" CssClass="btn btn-success mt-4" OnClick="btDatHang_Click" />
             </div>
-            <asp:Label ID="test" runat="server" Text=""></asp:Label>
         </div>
         <div class="col-2"></div>
 

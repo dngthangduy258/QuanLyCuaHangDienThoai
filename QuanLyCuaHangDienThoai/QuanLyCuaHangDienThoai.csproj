@@ -96,12 +96,15 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Global.asax" />
     <Content Include="HoaDon.aspx" />
+    <Content Include="images\background\TGDD-1920x500.png" />
     <Content Include="images\dienthoai\no_image.png" />
+    <Content Include="images\DNKSTORE2.png" />
     <Content Include="images\slide.js" />
     <Content Include="images\slides\img1.png" />
     <Content Include="images\slides\img2.png" />
     <Content Include="images\slides\img3.png" />
     <Content Include="images\star.png" />
+    <Content Include="LienHe.aspx" />
     <Content Include="Sanpham.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -110,6 +113,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Dangnhap.aspx" />
+    <Content Include="style\my.css" />
+    <Content Include="style\shop-homepage.css" />
     <Content Include="style\styledangnhap.css" />
     <Content Include="SuaDienThoai.aspx" />
     <Content Include="Themdienthoai.aspx" />
@@ -126,6 +131,13 @@
     </Compile>
     <Compile Include="HoaDon.aspx.designer.cs">
       <DependentUpon>HoaDon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LienHe.aspx.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LienHe.aspx.designer.cs">
+      <DependentUpon>LienHe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Product.cs" />

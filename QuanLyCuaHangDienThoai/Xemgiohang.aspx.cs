@@ -109,7 +109,7 @@ namespace QuanLyCuaHangDienThoai
                 gvGioHang.DataSource = cart.Items;
                 gvGioHang.DataBind();
                 //gán tổng thành tiền cho Label
-                lbTongTien.Text = string.Format("Tổng thành tiền: <b> {0: #,##0} đồng </b>",cart.Total);
+                lbTongTien.Text = string.Format("Tổng thành tiền: <b> {0: #,##0} $ </b>",cart.Total);
                 lbTongTienH.Text = cart.Total.ToString();
             }
         }
@@ -192,7 +192,6 @@ namespace QuanLyCuaHangDienThoai
                 decimal gia;
                 if (Decimal.TryParse(donGia, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CurrentCulture, out gia))
                 {
-                    test.Text = gia.ToString();
                     item.DonGia = gia;
                 }
                 gioHang.Add(item);
@@ -248,7 +247,8 @@ namespace QuanLyCuaHangDienThoai
                 cmdChiTiet.Parameters.AddWithValue("@DonGia", item.DonGia);
                 cmdChiTiet.ExecuteNonQuery();
             }
-            test.Text = "Thêm thành công";
+            string script = "alert('Đặt hàng thành công!');";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "SuccessPopup", script, true);
 
 
 

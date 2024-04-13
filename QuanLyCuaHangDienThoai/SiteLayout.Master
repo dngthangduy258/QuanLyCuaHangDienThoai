@@ -53,7 +53,9 @@
     <nav style="font-size:15px" class="nav">
         <div class="container">
             <h1 class="logo">
-                <a href="#">Logo</a>
+                <a href="#">
+                    <img style="height:45px" src="images/DNKSTORE2.png" />
+                   </a>
             </h1>
             <ul>
                 
@@ -63,6 +65,7 @@
                 <li><a href="Trangchu.aspx">Trang chủ</a></li>
                 <li><a href="SanPham.aspx">Sản phẩm</a></li>
                 <li><a href="Xemgiohang.aspx">Giỏ hàng</a></li>
+                 <li><a href="LienHe.aspx">Liên hệ</a></li>
                 <% if (ktDangNhap == 0 || ktDangNhap2 == 0)
                     {                %>
                 <li><a href="Dangnhap.aspx">Đăng nhập / Đăng ký</a></li>
@@ -79,6 +82,7 @@
                 <li><a href="SanPham.aspx">Sản phẩm</a></li>
                 <li><a href="HoaDon.aspx">Hóa đơn</a></li>
                 <li><a href="Themdienthoai.aspx">Thêm điện thoại</a></li>
+                 <li><a href="LienHe.aspx">Liên hệ</a></li>
                 
                  <% if (ktDangNhap == 0 || ktDangNhap2 == 0)
                      {                %>
